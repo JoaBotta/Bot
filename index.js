@@ -138,16 +138,5 @@ client.on("messageCreate", async (message) => {
   }
 });
 
-
 // Iniciar sesión con el token del bot
 client.login(process.env.DISCORD_TOKEN);
-
-// Ruta para keep-alive
-app.get('/', (req, res) => {
-  res.send('Bot is alive!');
-});
-
-// Iniciar servidor Express
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
