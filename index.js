@@ -1,5 +1,5 @@
 require('dotenv').config();
-const port = process.env.PORT || 3000;
+
 const {
   Client,
   GatewayIntentBits,
@@ -19,14 +19,14 @@ const client = new Client({
 
 // Configurar Express para manejar solicitudes HTTP
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000; // Usa el puerto proporcionado por Render o 3000 si no está definido
 
-app.get("/", (req, res) => {
-  res.send("El bot de Discord está en funcionamiento");
+app.get('/', (req, res) => {
+    res.send('Bot is running!');
 });
 
 app.listen(PORT, () => {
-  console.log(`Servidor HTTP escuchando en el puerto ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
 
 // Mapeo de códigos de invitación a nombres de roles
