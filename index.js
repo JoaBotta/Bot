@@ -1,6 +1,5 @@
 require('dotenv').config();
-const http = require('http');
-const fetch = require('node-fetch'); // Asegúrate de requerir 'node-fetch'
+
 const {
   Client,
   GatewayIntentBits,
@@ -22,27 +21,13 @@ const client = new Client({
 const app = express();
 const PORT = process.env.PORT || 3000; // Usa el puerto proporcionado por Render o 3000 si no está definido
 
-// Ruta para keep-alive
 app.get('/', (req, res) => {
     res.send('Bot is running!');
 });
 
-// Iniciar servidor Express
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
-
-// Auto-ping cada 5 minutos para mantener el bot activo
-setInterval(() => {
-    fetch(`http://localhost:${PORT}`)
-        .then(res => console.log(`Pinged self at ${new Date().toLocaleTimeString()}`))
-        .catch(err => console.error('Error pinging self:', err));
-}, 5 * 60 * 1000); // 5 minutos en milisegundos
-
-// Configurar Keep-Alive para que el bot se mantenga activo en Render
-setInterval(() => {
-    http.get(`http://localhost:${PORT}/`);
-}, 25 * 60 * 1000); // Cada 25 minutos
 
 // Mapeo de códigos de invitación a nombres de roles
 const inviteToRole = {
