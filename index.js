@@ -31,14 +31,11 @@ app.listen(PORT, () => {
 
 // Mapeo de códigos de invitación a nombres de roles
 const inviteToRole = {
-  5p2C2VjSsR: "M. Basica",
-  NZxUfRfuRt: "Gratis",
-  RTqW98FG39: "M. Avanzada",
-  k2XRdJWFGX: "MEMBRESIA ARBITRADING",
-  jH2Y7hbuad:"GRATIS ARBITRADING",
- //https://discord.gg/5p2C2VjSsR
-  
-  //https://discord.gg/k2XRdJWFGX
+  "5p2C2VjSsR": "M. Basica",
+  "NZxUfRfuRt": "Gratis",
+  "RTqW98FG39": "M. Avanzada",
+  "k2XRdJWFGX": "MEMBRESIA ARBITRADING",
+  "jH2Y7hbuad": "GRATIS ARBITRADING"
 };
 
 // Mapa para almacenar las invitaciones actuales
